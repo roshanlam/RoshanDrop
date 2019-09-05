@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+# Copyright (C) 2019 - present Roshan Lamichhane 
+# This file is part of the RoshanDrop project
+
+
+import sys
+import platform
+from optparse import OptionParser
+
+from src import config
+from src import cli
+
+__appName__ = 'RoshanDrop'
+__version__ = '0.0.1'
+___author__ = 'Roshan Lamichhane'
+
+# Check that at least Python 2.6 is running
+if sys.version_info < (2, 6):
+    print ('Python version must be at least 2.6.')
+    sys.exit(1)
+if platform.system() != "Darwin":
+    print ('Mac OS X are supported!')
+    sys.exit(1)
+
+# find out if they are asking for help
+HELP = False
+for val in sys.argv:
+    if val == '-h' or val == '--help': HELP = True
+
+def main():
+    """
+    Everything dispatches from this main function.
+    """
+    usage = "usage: %prog start|stop|restart"
+
+    # Parse the command line
+    (options, args) = config.clParser(OptionParser(usage=usage, version=__version__)).parseArgs(HELP)
+    if HELP:
+        sys.exit(0)
+
+    cli.Cli(args=args, options=options)
+
+if __name__ == '__main__':
+    try:
+        main()
+    except (KeyboardInterrupt, SystemExit):
+        sys.exit(1)
+    except:
+        import traceback
+        traceback.print_exc()
