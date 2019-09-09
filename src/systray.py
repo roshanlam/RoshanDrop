@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Copyright (C) 2019 Roshan Lamichhane
 
 # This is only needed for Python v2 but is harmless for Python v3.
