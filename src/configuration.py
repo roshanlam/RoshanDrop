@@ -177,8 +177,8 @@ class Configuration:
         """
         Adds some test shares
         """
-        self.add_share("/Users/sruml/PythonDrop", "sebastianruml.com",
-                "PythonDrop/PythonDrop.git", "pythondrop")
+        self.add_share("/Users/sruml/RoshanDrop", "roshanlamichhane.com",
+                "RoshanDrop/RoshanDrop.git", "roshandrop")
 
-        self.add_share("/Users/sruml/PythonDrop2", "sebastianruml.com",
-                "PythonDrop/PythonDrop.git", "pythondrop")
+        self.add_share("/Users/sruml/RoshanDrop2", "roshanlamichhane.com",
+                "RoshanDrop/RoshanDrop.git", "roshandrop")
