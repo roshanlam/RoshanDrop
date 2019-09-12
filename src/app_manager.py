@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# Copyright (C) 2019 Roshan Lamichhane
+
 from fswatcher import FSWatcher
 from api_server import ApiServer
 from config import Config
