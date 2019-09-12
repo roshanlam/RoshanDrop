@@ -48,11 +48,11 @@ class ApiRequestHandler(SocketServer.StreamRequestHandler):
             elif command == 'stop':
                 # Stops watching the repository
                 self.wfile.write("Stop watching...")
-                PythonDrop.stop()
+                RoshanDrop.stop()
             elif command == 'start':
                 # Starts watching the repository
                 self.wfile.write("Start watching...")
-                PythonDrop.start()
+                RoshanDrop.start()
             elif command == 'help':
                 # Shows all available commands and a help message
                 self.wfile.write(self.help_message)
