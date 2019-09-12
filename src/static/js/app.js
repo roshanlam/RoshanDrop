@@ -1,0 +1,6 @@
+RoshanDrop = {
+
+};
+$(document).ready(function() {
+
+});
