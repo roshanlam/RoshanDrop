@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="content">
+        <div class="page-header">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <h2>Shares</h2>
+                {% if shares %}
+                    {% for share in shares %}
+                    <div class="row">
+                    <div class="span6">
+                        <span class="share-name">{{ share.sync_folder }}</span>
+                    </div>
+                    <div class="span6">
+                        <span class="share-name"><a href="/shares/{{ share.id }}">Go</a></span>
+                    </div>
+                    </div>
+                {% endfor %}
+                {% else %}
+                    <h3>No shares available!</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
