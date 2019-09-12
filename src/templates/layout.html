@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Welcome{% endblock %} | PythonDrop</title>
+        <meta name="RoshanDrop" content="">
+        <meta name="Roshan Lamichhane" content="">
+        
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/vendor/bootstrap.css') }}">
+        
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/app.css') }}">
+        
+        </style>
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/">RoshanDrop</a>
+                    <ul class="nav">
+                        <li class="dropdown" id="sharesnav">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#shresnav">
+                                Shares
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% for share in shares %}
+                                    <li><a href="/shares/{{ share.id }}">{{ share.sync_folder }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li><a href="/settings">Settings</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            {% block body %}{% endblock %}
+            
+            <footer>
+                <p>&copy; Roshan Lamichhane 2019</p>
+            </footer>
+        </div>
+
+        <!-- JavaScript at the bottom for fast page loading -->
+        <script src="{{ url_for('static', filename='js/vendor/jquery-1.7.1.min.js') }}" type="text/javascript"></script>
+        <script src="{{ url_for('static', filename='js/vendor/bootstrap.js') }}" type="text/javascript"></script>
+
+        <script src="{{ url_for('static', filename='js/app.js') }}" type="text/javascript"></script>
+        <script src="{{ url_for('static', filename='js/utils.js') }}" type="text/javascript"></script>
+
+        {% block js %}{% endblock %}
+
+    </body>
+</html>
