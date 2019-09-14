@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # Copyright (C) 2019 Roshan Lamichhane
-
 import sys
 import threading
 import SocketServer
