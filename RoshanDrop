@@ -4,7 +4,6 @@
 import sys
 import platform
 from optparse import OptionParser
-
 from src import config
 from src import cli
 
